@@ -6,7 +6,7 @@ This is a Flask-based web application for managing tasks. Users can register, lo
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/SJ-1407/Task.git
 
 2. **Create and Activate Virtual Environment:**
 
