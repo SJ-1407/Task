@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Details</h1>
+        <p><strong>ID:</strong> <span id="taskId">{{ task.task_id }}</span></p>
+        <p><strong>Name:</strong> <span id="taskName">{{ task.name }}</span></p>
+        <p><strong>Description:</strong> <span id="taskDescription">{{ task.description }}</span></p>
+        <!-- Modify the button to call the editTask function -->
+        <button onclick="editTask()">Edit Task</button>
+        <a href="{{ url_for('index') }}">Back to All Tasks</a>
+    </div>
+
+    <script>
+        function editTask() {
+            var taskId = document.getElementById('taskId').innerText;
+            var taskName = document.getElementById('taskName').innerText;
+            var taskDescription = document.getElementById('taskDescription').innerText;
+
+            // Redirect to the update task route with the specific task ID
+            window.location.href = "/tasks/update/" + taskId;
+        }
+    </script>
+</body>
+</html>
